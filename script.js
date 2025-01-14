@@ -1,3 +1,12 @@
+//declaring an object to maintain the score
+// In order to save the scores from the previous games the object needs 
+// to be declared outside the function
+let score={
+    wins : 0,
+    losses : 0,
+    ties : 0
+};
+
 //function for the computer to pick a move
 function pickComputerMove(){
     const randomNumber = Math.random();
@@ -42,10 +51,26 @@ function playGame(playermove){
         }else if(computerMove === 'paper'){
             result='You Lose';
         }else if(computerMove === 'scissors'){
-            result='You win';
+            result='You Win';
         }
+
+    }
+    //write an if statement block to count the number of each results
+    if(result === 'You Win'){
+        score.wins += 1;
+    }else if(result === 'You Lose'){
+        score.losses += 1;
+    }else if(result==='Tie'){
+        score.ties += 1;
     }
 
+    alert(`You picked ${playermove}. Computer Picked ${computerMove}. ${result}
+Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`)
+}
 
-    alert(`You picked ${playermove}. Computer Picked ${computerMove}. ${result}`)
+//function to reset the score to 0
+function reset(){
+    score.wins =0;
+    score.losses = 0;
+    score.ties = 0;
 }
