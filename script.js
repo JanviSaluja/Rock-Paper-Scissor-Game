@@ -1,11 +1,7 @@
-//declaring an object to maintain the score
 // In order to save the scores from the previous games the object needs 
-// to be declared outside the function
-let score={
-    wins : 0,
-    losses : 0,
-    ties : 0
-};
+// to be declared outside the function use JSON and localStorage for this
+let score=JSON.parse(localStorage.getItem('score'));
+
 
 //function for the computer to pick a move
 function pickComputerMove(){
@@ -63,6 +59,9 @@ function playGame(playermove){
     }else if(result==='Tie'){
         score.ties += 1;
     }
+    
+    //save the score using the localStorage to store the scores permanently
+    localStorage.setItem('score',JSON.stringify(score));
 
     alert(`You picked ${playermove}. Computer Picked ${computerMove}. ${result}
 Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`)
