@@ -2,7 +2,6 @@
 // to be declared outside the function use JSON and localStorage for this
 let score=JSON.parse(localStorage.getItem('score'));
 
-
 //function for the computer to pick a move
 function pickComputerMove(){
     const randomNumber = Math.random();
@@ -67,9 +66,10 @@ function playGame(playermove){
 Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`)
 }
 
-//function to reset the score to 0
+//to reset the score remove the string from the localstorage
 function reset(){
     score.wins =0;
-    score.losses = 0;
-    score.ties = 0;
+    score.losses =0;
+    score.ties =0;
+    localStorage.removeItem('score');
 }
