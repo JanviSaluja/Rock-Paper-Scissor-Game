@@ -62,10 +62,18 @@ function playGame(playermove){
     //save the score using the localStorage to store the scores permanently
     localStorage.setItem('score',JSON.stringify(score));
 
+    //call the function to update the score
+    updateScoreElement();
+
     alert(`You picked ${playermove}. Computer Picked ${computerMove}. ${result}
-Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`)
+`)
 }
 
+//create a function to update the score 
+function updateScoreElement(){
+    //DOM selector to display the scores in the main screen
+    document.querySelector('.js-score').innerHTML = `Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`
+}
 //to reset the score remove the string from the localstorage
 function reset(){
     score.wins =0;

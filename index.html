@@ -16,6 +16,9 @@
     
     <button class="scissor" onclick="playGame('scissors');">Scissors</button>
 
-    <button class="reset" onclick="reset();">Reset Score</button>
+    <!-- to display the scores in the main screen we will use DOM -->
+    <p class="js-score"></p>
+
+    <button class="reset" onclick="reset(); updateScoreElement();">Reset Score</button>
 </body>
 </html>
