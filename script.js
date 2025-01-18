@@ -1,6 +1,11 @@
 // In order to save the scores from the previous games the object needs 
 // to be declared outside the function use JSON and localStorage for this
-let score=JSON.parse(localStorage.getItem('score'));
+// if the data retrieved is null then the string takes the given value
+let score=JSON.parse(localStorage.getItem('score')) || {
+    wins:0,
+    losses:0,
+    ties:0
+};
 
 //function for the computer to pick a move
 function pickComputerMove(){
@@ -63,16 +68,16 @@ function playGame(playermove){
     localStorage.setItem('score',JSON.stringify(score));
 
     //call the function to update the score
+    document.querySelector('.js-result').innerHTML = result;
+    document.querySelector('.js-moves').innerHTML = `You ${playermove} - ${computerMove} Computer`;
     updateScoreElement();
 
-    alert(`You picked ${playermove}. Computer Picked ${computerMove}. ${result}
-`)
 }
 
 //create a function to update the score 
 function updateScoreElement(){
     //DOM selector to display the scores in the main screen
-    document.querySelector('.js-score').innerHTML = `Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`
+    document.querySelector('.js-score').innerHTML = `Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`;
 }
 //to reset the score remove the string from the localstorage
 function reset(){
@@ -80,4 +85,5 @@ function reset(){
     score.losses =0;
     score.ties =0;
     localStorage.removeItem('score');
+    updateScoreElement();
 }
