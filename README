@@ -1,0 +1,20 @@
+# Rock Paper Scissors Game
+
+## Languages used:
+- HTML
+- CSS
+- JavaScript
+  
+## About The Project:
+- A simple javascript rock paper scissors game.
+- The computer picks a random move build on a simple if-else statement block.
+- The code compares the player and computer moves and decides the result and gives the score accordingly.
+- Displays and maintains scores of the game.
+- Integrated localStorage to save the scores on the computer system and resets only when reset button is clicked.
+- To Display the results on the game screen in-built object DOM is used.
+
+## Link to the preview:
+https://janvisaluja.github.io/Rock-Paper-Scissor-Game/
+
+## Contact:
+- mail- janvisaluja.24@gmail.com
