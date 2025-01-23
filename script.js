@@ -67,10 +67,10 @@ function playGame(playermove){
     //save the score using the localStorage to store the scores permanently
     localStorage.setItem('score',JSON.stringify(score));
 
+    updateScoreElement();
     //call the function to update the score
     document.querySelector('.js-result').innerHTML = result;
-    document.querySelector('.js-moves').innerHTML = `You ${playermove} - ${computerMove} Computer`;
-    updateScoreElement();
+    document.querySelector('.js-moves').innerHTML = `You <img src="images/${playermove}-emoji.png"> <img src="images/${computerMove}-emoji.png"> Computer`;
 
 }
 

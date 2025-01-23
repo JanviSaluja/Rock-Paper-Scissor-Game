@@ -6,20 +6,22 @@
     <title>Game</title>
     <!-- add the link to the script -->
     <script src="script.js"></script>
+    <!-- add the link to the css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Rock Paper Scissor</p>
+    <p class="title">Rock Paper Scissors</p>
     <!-- make a button for each move and call a function in onclick -->
-    <button class="rock" onclick="playGame('rock');">Rock</button>
+    <button class="move-button" onclick="playGame('rock');"><img src="images/rock-emoji.png"></button>
     
-    <button class="paper" onclick="playGame('paper');">Paper</button>
+    <button class="move-button" onclick="playGame('paper');"><img src="images/paper-emoji.png"></button>
     
-    <button class="scissor" onclick="playGame('scissors');">Scissors</button>
+    <button class="move-button" onclick="playGame('scissors');"><img src="images/scissors-emoji.png"></button>
 
     <!-- to display the scores in the main screen we will use DOM -->
-    <p class="js-result"></p>
+    <p class="js-result result"></p>
     <p class="js-moves"></p>
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
 
     <button class="reset" onclick="reset(); updateScoreElement();">Reset Score</button>
 </body>
