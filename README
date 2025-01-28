@@ -7,11 +7,11 @@
   
 ## About The Project:
 - A simple javascript rock paper scissors game.
-- The computer picks a random move build on a simple if-else statement block.
-- The code compares the player and computer moves and decides the result and gives the score accordingly.
-- Displays and maintains scores of the game.
-- Integrated localStorage to save the scores on the computer system and resets only when reset button is clicked.
-- To Display the results on the game screen in-built object DOM is used.
+- The computer picks a random move built on a simple if-else statement block.
+- The code compares the player and computer moves, decides the result, and gives the score accordingly.
+- Displays and maintains game scores.
+- Integrated localStorage to save the scores on the computer system and resets only when the reset button is clicked.
+- In-built object DOM is used to Display the results on the game screen.
 
 ## Link to the preview:
 https://janvisaluja.github.io/Rock-Paper-Scissor-Game/
