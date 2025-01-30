@@ -12,6 +12,7 @@
 - Displays and maintains game scores.
 - Integrated localStorage to save the scores on the computer system and resets only when the reset button is clicked.
 - In-built object DOM is used to Display the results on the game screen.
+- Added an Auto Play Feature where the computer plays against itself every second and displays results. 
 
 ## Link to the preview:
 https://janvisaluja.github.io/Rock-Paper-Scissor-Game/

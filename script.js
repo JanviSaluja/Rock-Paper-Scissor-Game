@@ -87,3 +87,22 @@ function reset(){
     localStorage.removeItem('score');
     updateScoreElement();
 }
+
+//to autoplay
+let isAutoPlaying=false;
+let intervalID;
+function autoplay(){
+    if(!isAutoPlaying){
+        intervalID = setInterval(function(){
+            const playermove=pickComputerMove();
+            playGame(playermove);
+        },1000)
+        isAutoPlaying=true;
+        document.querySelector('.auto-js').innerHTML="Stop Play";
+    }else{
+        clearInterval(intervalID);
+        isAutoPlaying=false;
+        document.querySelector('.auto-js').innerHTML="Auto Play";
+    }
+    
+}
