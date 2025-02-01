@@ -23,6 +23,37 @@ function pickComputerMove(){
     return computerMove;
 }
 
+//eventListeners for the buttons
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector(".js-rock-button").addEventListener("click", () => {
+        playGame('rock');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector(".js-paper-button").addEventListener("click", () => {
+        playGame('paper');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector(".js-scissors-button").addEventListener("click", () => {
+        playGame('scissors');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('keydown',(event)=>{
+        if(event.key==='r'){
+            playGame('rock');
+        }else if(event.key==='p'){
+            playGame('paper');
+        }else if(event.key==='s'){
+            playGame('scissors');
+        }
+    });
+});
+
 //function to decide the result
 function playGame(playermove){
     //call the function to compute the move and save it in a variable
@@ -103,6 +134,6 @@ function autoplay(){
         clearInterval(intervalID);
         isAutoPlaying=false;
         document.querySelector('.auto-js').innerHTML="Auto Play";
-    }
-    
+    }   
 }
+
